@@ -42,6 +42,20 @@ public class Record
         SalePrice = salePrice;
         Link = link;
     }
+
+    //TO STRING - converts this entry into one formatted string for printing
+    public override string ToString()
+    {
+        //the negative numbers in each {} is determining how many characters each column takes up
+        //this can cut off some absurdly long entries but it looks waaaaay nicer
+        //if you want it to just print raw for debug purposes you can use this:
+        //return $"{PIN}, {Address}, {Owner}, {MarketValue}, {SaleDate}, {SalePrice}, {Link}";
+
+        //also the :F0 for PIN is just to make sure it doesnt print the pin in scientific notation
+
+        return string.Format("{0,-11:F0} {1,-30} {2,-45} {3,-12} {4,-12} {5,-15} {6,-100}",
+                         PIN, Address, Owner, MarketValue, SaleDate.ToString("MM/dd/yyyy"), SalePrice, Link);
+    }
 }
 
 class Program
@@ -183,37 +197,9 @@ class Program
     //column widths can be manually edited at the top of the function
     public static void PrintRecords(List<Record> records)
     {
-        // Define column widths
-        int pinWidth = 11;
-        int addressWidth = 30;
-        int ownerWidth = 45;
-        int marketValueWidth = 12;
-        int saleDateWidth = 12;
-        int salePriceWidth = 15;
-        int linkWidth = 100;
-
-        //print header
-        Console.WriteLine($"{FormatColumn("PIN", pinWidth)}{FormatColumn("ADDRESS", addressWidth)}{FormatColumn("OWNER", ownerWidth)}{FormatColumn("MARKET_VALUE", marketValueWidth)}{FormatColumn("SALE_DATE", saleDateWidth)}{FormatColumn("SALE_PRICE", salePriceWidth)}{FormatColumn("LINK", linkWidth)}");
-
-        //print records
         foreach (var record in records)
         {
-            Console.WriteLine($"{FormatColumn(record.PIN.ToString("F0"), pinWidth)}{FormatColumn(record.Address, addressWidth)}{FormatColumn(record.Owner, ownerWidth)}{FormatColumn(record.MarketValue.ToString("F2"), marketValueWidth)}{FormatColumn(record.SaleDate.ToString("yyyy-MM-dd"), saleDateWidth)}{FormatColumn(record.SalePrice.ToString("F2"), salePriceWidth)}{FormatColumn(record.Link, linkWidth)}");
-        }
-    }
-
-    //FORMAT COLUMN
-    //helper function for print records that pads/truncates a string based on given width
-    private static string FormatColumn(string value, int width)
-    {
-        // Truncate or pad the string to fit the specified width
-        if (value.Length >= width)
-        {
-            return value.Substring(0, width);
-        }
-        else
-        {
-            return value.PadRight(width);
+            Console.WriteLine(record.ToString());
         }
     }
 
