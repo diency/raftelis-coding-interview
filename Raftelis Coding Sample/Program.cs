@@ -81,15 +81,48 @@ class Program
         Console.WriteLine("First records done printing!");
         Console.WriteLine("----------------------------");
 
-        /*
         //sort by firstname
         records.Sort((x,y) => {
-            return 1;
+            String xOwner = GetFirstNameOrBusiness(x.Owner);
+            String yOwner = GetFirstNameOrBusiness(y.Owner);
+            return string.Compare(xOwner,yOwner);
         });
 
         //print again
         PrintRecords(records);
-        */
+
+    }
+
+    //GET FIRST NAME OR BUSINESS
+    //owner in the db can either be formatted like (lastname, firstname) eg
+    //STALEY, CARTER
+    //or the full name of a business eg
+    //RAFTELIS LLC
+    //if its a last/first name we want to cut it up and only return the first name,
+    //if its a business we just return it raw
+    static String GetFirstNameOrBusiness(String rawName){
+
+        //check if name contains a comma
+        //if it does, its a person(s)
+        if (rawName.Contains(","))
+        {
+            //split the string and return the second part
+            string[] parts = rawName.Split(',');
+            string firstName = parts[1].Trim(); //trim to remove leading/trailing whitespace
+
+            //NOTE: some first names are actually more than one person eg
+            //STALEY, LAURA & TOBY
+            //currently this function would just return "LAURA & TOBY"
+            //but if you only wanted the first name of the first person
+            //you'd put the line of code to cut off the second person here
+
+            return firstName;
+        }
+        else
+        {
+            //if there's no comma, its a business, so just return the whole thing
+            return rawName;
+        }
     }
 
     //GET ADDRESS NAME AND NUMBER
