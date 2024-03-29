@@ -17,6 +17,7 @@ using System.Text.RegularExpressions;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Xml.Linq;
 
 //RECORD CLASS
 //used for storing entries from the .txt
@@ -52,7 +53,96 @@ class Program
         string filePath = "Parcels.txt"; // Provide the path to your text file
         List<Record> records = ParseRecordsFromFile(filePath);
 
+        //sort by address name/number
+        records.Sort((x,y) => {
+            (string, int) xTuple = GetAddressNameAndNumber(x.Address);
+            string xRecordName = xTuple.Item1;
+
+            (string, int) yTuple = GetAddressNameAndNumber(y.Address);
+            string yRecordName = yTuple.Item1;
+            
+
+            int nameComparison = string.Compare(xRecordName,yRecordName);
+            if(nameComparison != 0){
+                return nameComparison;
+            }
+
+            //if names are the same, compare street numbers
+            int xRecordNum = xTuple.Item2;
+            int yRecordNum = yTuple.Item2;
+            return xRecordNum.CompareTo(yRecordNum);
+        });
+
+        //print records
         PrintRecords(records);
+
+        //print a little bumper between the databases
+        Console.WriteLine("----------------------------");
+        Console.WriteLine("First records done printing!");
+        Console.WriteLine("----------------------------");
+
+        /*
+        //sort by firstname
+        records.Sort((x,y) => {
+            return 1;
+        });
+
+        //print again
+        PrintRecords(records);
+        */
+    }
+
+    //GET ADDRESS NAME AND NUMBER
+    //given a string for the raw address, returns a tuple containing a string which contains the name of the address and
+    //an integer which is the street number.
+    //regarding houses with units (eg: 45 B EXAMPLE RD) currently the algorithm ignores unit letters and prioritizes
+    //base name + number but this function can be modified to account for unit letters as well
+    //by appending the unit letter to the end of the address name
+    static (string, int) GetAddressNameAndNumber(string rawAddress){
+
+        //split it into two parts using regular expressions
+        //the \d is looking for numbers,
+        //the \s is looking for whitespace,
+        //and then the .+ is looking for the remaining characters
+        Match match = Regex.Match(rawAddress, @"^(\d+)\s+(.+)");
+
+        if(match.Success){
+            //store the split string into variables
+            //converting num into an int
+            int num = int.Parse(match.Groups[1].Value);
+            String name = match.Groups[2].Value;
+
+            //some addresses are formatted like "642 - LOST RIVER RD"
+            //we want to get rid of the - and whitespace at the front of the string if it exists so we do that here
+            if(name.StartsWith("- ") && name.Length > 2){
+                name = name.Substring(2);
+            }else if(name.StartsWith("-") && name.Length > 1){
+                name = name.Substring(1);
+            }
+
+            //some addresses have a unit char at the front of them
+            //eg "B FROST BLVD"
+            //currently we just remove these here
+            
+            if(name.Length > 2 && char.IsLetter(name[0]) && name[1] == ' '){
+                name = name.Substring(2).Trim();
+            }
+
+            //alternatively, you can append the unit number to the end of the name string by
+            //replacing "name = name.Substring(2).Trim();" with the following:
+            /*
+                string[] nameParts = name.Split(new[] { ' ' }, 2);
+                name = nameParts[1] + " " + nameParts[0];
+            */
+            //this will cause it to sort the unit letters alphabetically, prioritizing them over unit number
+
+            //return it
+            return(name, num);
+        }else{
+            //oops, it didnt work, throw an error
+            throw new ArgumentException("Invalid address format: {0}", rawAddress);
+        }
+        
     }
 
     //PRINT RECORDS

@@ -12,3 +12,4 @@ c:\Users\123ca\Desktop\raftelis coding interview\Raftelis Coding Sample\obj\Debu
 c:\Users\123ca\Desktop\raftelis coding interview\Raftelis Coding Sample\obj\Debug\net8.0\Raftelis Coding Sample.pdb
 c:\Users\123ca\Desktop\raftelis coding interview\Raftelis Coding Sample\obj\Debug\net8.0\Raftelis Coding Sample.genruntimeconfig.cache
 c:\Users\123ca\Desktop\raftelis coding interview\Raftelis Coding Sample\obj\Debug\net8.0\ref\Raftelis Coding Sample.dll
+c:\Users\123ca\Desktop\raftelis coding interview\Raftelis Coding Sample\obj\Debug\net8.0\Raftelis Coding Sample.sourcelink.json
