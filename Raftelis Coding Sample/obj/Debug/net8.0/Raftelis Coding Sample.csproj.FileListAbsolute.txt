@@ -1,0 +1,14 @@
+c:\Users\123ca\Desktop\raftelis coding interview\Raftelis Coding Sample\bin\Debug\net8.0\Raftelis Coding Sample.exe
+c:\Users\123ca\Desktop\raftelis coding interview\Raftelis Coding Sample\bin\Debug\net8.0\Raftelis Coding Sample.deps.json
+c:\Users\123ca\Desktop\raftelis coding interview\Raftelis Coding Sample\bin\Debug\net8.0\Raftelis Coding Sample.runtimeconfig.json
+c:\Users\123ca\Desktop\raftelis coding interview\Raftelis Coding Sample\bin\Debug\net8.0\Raftelis Coding Sample.dll
+c:\Users\123ca\Desktop\raftelis coding interview\Raftelis Coding Sample\bin\Debug\net8.0\Raftelis Coding Sample.pdb
+c:\Users\123ca\Desktop\raftelis coding interview\Raftelis Coding Sample\obj\Debug\net8.0\Raftelis Coding Sample.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\123ca\Desktop\raftelis coding interview\Raftelis Coding Sample\obj\Debug\net8.0\Raftelis Coding Sample.AssemblyInfoInputs.cache
+c:\Users\123ca\Desktop\raftelis coding interview\Raftelis Coding Sample\obj\Debug\net8.0\Raftelis Coding Sample.AssemblyInfo.cs
+c:\Users\123ca\Desktop\raftelis coding interview\Raftelis Coding Sample\obj\Debug\net8.0\Raftelis Coding Sample.csproj.CoreCompileInputs.cache
+c:\Users\123ca\Desktop\raftelis coding interview\Raftelis Coding Sample\obj\Debug\net8.0\Raftelis Coding Sample.dll
+c:\Users\123ca\Desktop\raftelis coding interview\Raftelis Coding Sample\obj\Debug\net8.0\refint\Raftelis Coding Sample.dll
+c:\Users\123ca\Desktop\raftelis coding interview\Raftelis Coding Sample\obj\Debug\net8.0\Raftelis Coding Sample.pdb
+c:\Users\123ca\Desktop\raftelis coding interview\Raftelis Coding Sample\obj\Debug\net8.0\Raftelis Coding Sample.genruntimeconfig.cache
+c:\Users\123ca\Desktop\raftelis coding interview\Raftelis Coding Sample\obj\Debug\net8.0\ref\Raftelis Coding Sample.dll
