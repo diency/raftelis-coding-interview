@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Raftelis Coding Sample")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3c78d0e6cab391132f98b0c29e8d47fe60045aa7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c951bb8c6d4112869ef738b82f53bf8ab862fb87")]
 [assembly: System.Reflection.AssemblyProductAttribute("Raftelis Coding Sample")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Raftelis Coding Sample")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

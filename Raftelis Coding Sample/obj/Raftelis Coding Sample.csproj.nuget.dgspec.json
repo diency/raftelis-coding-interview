@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\123ca\\Desktop\\raftelis coding interview\\Raftelis Coding Sample\\Raftelis Coding Sample.csproj": {}
+    "C:\\Users\\123ca\\Desktop\\raftelis coding interview\\Raftelis Coding Sample\\Raftelis Coding Sample.csproj": {}
   },
   "projects": {
-    "c:\\Users\\123ca\\Desktop\\raftelis coding interview\\Raftelis Coding Sample\\Raftelis Coding Sample.csproj": {
+    "C:\\Users\\123ca\\Desktop\\raftelis coding interview\\Raftelis Coding Sample\\Raftelis Coding Sample.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\123ca\\Desktop\\raftelis coding interview\\Raftelis Coding Sample\\Raftelis Coding Sample.csproj",
+        "projectUniqueName": "C:\\Users\\123ca\\Desktop\\raftelis coding interview\\Raftelis Coding Sample\\Raftelis Coding Sample.csproj",
         "projectName": "Raftelis Coding Sample",
-        "projectPath": "c:\\Users\\123ca\\Desktop\\raftelis coding interview\\Raftelis Coding Sample\\Raftelis Coding Sample.csproj",
+        "projectPath": "C:\\Users\\123ca\\Desktop\\raftelis coding interview\\Raftelis Coding Sample\\Raftelis Coding Sample.csproj",
         "packagesPath": "C:\\Users\\123ca\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\123ca\\Desktop\\raftelis coding interview\\Raftelis Coding Sample\\obj\\",
+        "outputPath": "C:\\Users\\123ca\\Desktop\\raftelis coding interview\\Raftelis Coding Sample\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\123ca\\AppData\\Roaming\\NuGet\\NuGet.Config",
